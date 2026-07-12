@@ -4,7 +4,7 @@ class ThreeConsecutiveseIntegersWithSum{
         // HashSet<Integer> hs = new HashSet<>();
         long arr[] = new long[3];
         for(int i=0;i<num;i++){
-            int sum = 0;
+            int sum;
             int x = i;
             sum = (x-1)+(x)+(x+1);
             if(sum==num){
