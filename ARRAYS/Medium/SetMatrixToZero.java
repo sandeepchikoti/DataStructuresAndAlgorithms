@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class SetMatrixToZero {
     public static void main(String[] args) {
-        int arr[][] = {{1,1,1}, {1,0,1}, {1,1,1}};
+        int arr[][] = {{1,2,3,4},{5,0,7,8},{0,10,11,12},{13,14,15,0}};
         //         Brute Force
         // for (int i = 0; i < mat.length; i++) {
         //     for (int j = 0; j < mat[i].length; j++) {
@@ -56,9 +56,9 @@ public class SetMatrixToZero {
         for(int i=0;i<rows;i++){
             for(int j=0;j<cols;j++){
                 if(arr[i][j]==0){
-                    arr[0][j]=0;
+                    arr[i][0]=0;
                     if(j!=0){
-                        arr[i][0]=0;
+                        arr[0][j]=0;
                     }
                     if(j==0){
                         col0=0;
@@ -82,6 +82,8 @@ public class SetMatrixToZero {
                 arr[0][j] = 0;
             }
         }
+
+        System.out.println(Arrays.deepToString(arr));
         if(col0 == 0){
             for(int i=0;i<rows;i++){
                 arr[i][i] = 0;
