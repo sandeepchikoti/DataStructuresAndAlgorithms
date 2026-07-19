@@ -1,4 +1,7 @@
-class NextPermutation  {
+import java.util.Arrays;
+
+public class NextPermutation {
+    
     public void nextPermutation(int[] nums) {
         int n = nums.length;
         int index = -1;
@@ -13,8 +16,7 @@ class NextPermutation  {
 
         // Step 2: If no breakpoint, reverse the whole array
         if (index == -1) {
-            int left = 0;
-            int right = n - 1;
+            int left = 0, right = n - 1;
             while (left < right) {
                 int temp = nums[left];
                 nums[left] = nums[right];
@@ -36,8 +38,7 @@ class NextPermutation  {
         }
 
         // Step 4: Reverse the suffix
-        int left = index + 1;
-        int right = n - 1;
+        int left = index + 1, right = n - 1;
         while (left < right) {
             int temp = nums[left];
             nums[left] = nums[right];
@@ -45,5 +46,18 @@ class NextPermutation  {
             left++;
             right--;
         }
+    }
+
+    // MAIN METHOD
+    public static void main(String[] args) {
+        NextPermutation obj = new NextPermutation();
+
+        int[] nums = {6,8,7,1,3,4,5,8,9,9};
+
+        System.out.println("Before: " + Arrays.toString(nums));
+
+        obj.nextPermutation(nums);
+
+        System.out.println("After : " + Arrays.toString(nums));
     }
 }
